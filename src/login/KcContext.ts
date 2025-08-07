@@ -9,6 +9,16 @@ export type KcContextExtension = {
     // See: https://docs.keycloakify.dev/faq-and-help/some-values-you-need-are-missing-from-in-kccontext
 };
 
-export type KcContextExtensionPerPage = {};
+export type KcContextExtensionPerPage = {
+    "login-reset-password-with-phone.ftl": {
+        realm: {
+            duplicateEmailsAllowed: boolean;
+            loginWithEmailAllowed: boolean;
+        };
+        auth: {
+            attemptedUsername?: string;
+        };
+    };
+};
 
 export type KcContext = ExtendKcContext<KcContextExtension, KcContextExtensionPerPage>;

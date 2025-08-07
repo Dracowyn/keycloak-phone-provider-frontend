@@ -11,7 +11,17 @@ const kcContextExtension: KcContextExtension = {
         ...kcEnvDefaults
     }
 };
-const kcContextExtensionPerPage: KcContextExtensionPerPage = {};
+const kcContextExtensionPerPage: KcContextExtensionPerPage = {
+    "login-reset-password-with-phone.ftl": {
+        realm: {
+            duplicateEmailsAllowed: true,
+            loginWithEmailAllowed: true
+        },
+        auth: {
+            attemptedUsername: ""
+        }
+    }
+};
 
 export const { getKcContextMock } = createGetKcContextMock({
     kcContextExtension,
